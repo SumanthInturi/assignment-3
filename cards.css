@@ -6,6 +6,10 @@
 body{
     background-color: #f3f2f9;
 }
+@font-face {
+    font-family: newfont;
+    src: url(/playball.regular.ttf);
+}
 .main{
     display: flex;
     width: 100vw;
@@ -33,7 +37,7 @@ body{
 }
 .cards .title{
     padding:50px 100px;
-    font-style: ;
+    font-family: newfont;
 }
 .cards .content{
     padding: 5px 30px;
