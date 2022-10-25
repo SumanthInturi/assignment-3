@@ -5,34 +5,40 @@
 }
 body{
     background-color: #f3f2f9;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
 }
 @font-face {
     font-family: newfont;
     src: url(/playball.regular.ttf);
 }
+@font-face {
+    font-family: nunito;
+    src: url(/nunito-sans.light.ttf);
+}
+
 .main{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: space-around;
+    justify-content: center;
+    align-content: center;
     flex-wrap: wrap;
-    width: 100vw;
-    height: auto;
-    padding: 50px;
-    position: relative;
+    padding: 30px;
+    width: 1080px;
+    min-height: 100%;
 }
 .cards{
     box-sizing: border-box;
     text-align: center;
-    width: 20rem;
-    margin-top: 3rem;
-    flex-wrap: wrap;
-    height: auto;
+    width: 217px;
+    height: 300px;
     background-color: #ffffff;
     display: flex;
     flex-direction: row;
     border-radius: 3px;
-    flex-wrap: wrap;
+    margin: 15px;
 }
 .top-icon{
     position: absolute;
@@ -55,7 +61,7 @@ body{
     background-color: #ea4c88;
 }
 .cards .head-6{
-    background-color: #1ca1f1;;
+    background-color: #1ca1f1;
 }
 .cards .head-7{
     background-color: #f57f01;
@@ -64,27 +70,51 @@ body{
     background-color: #0177b6;
 }
 .cards .header{
-    width: 100%;
-    height: 100px;
     position: relative;
+    width: 100%;
+    height: 28%;
     text-align: center;
+}
+.custom-checkbox{
+    border: 1px solid white;
+    width: 15px;
+    height:15px;
+    position: absolute;
+    top:10px;
+    right:10px;
 }
 .cards .title{
-    padding:50px 100px;
+    padding-top:50px;
+    padding-bottom: 10px;
+    width: 100%;
     font-family: newfont;
+    color: #707070;
     position: relative;
     text-align: center;
-    left: 20px;
+
 }
 .cards .content{
-    padding: 5px 30px;
+    padding: 5px 25px;
+    color: #c2c2c2;
+    font-size: 11px;
+    font-family:nunito ;
 }
 .icons-1,.icons-2,.icons-3,.icons-4,.icons-5,.icons-6,.icons-7,.icons-8{
     width: 100%;
     display: flex;
     justify-content: center;
     height: 15px;
-    margin: 40px;
+    margin: 0;
+    box-sizing: content-box;
+    color: #b3b3b3;
+    text-align: center;
+    padding-top:30px;
+    font-size: 10px;
+    letter-spacing: 3px;
+
+}
+.header .top-icon{
+    color: #fff;
 }
 p i{
     margin: 5px;
@@ -105,9 +135,192 @@ p i{
     top: 10px;
     height: 20px;
     width: 20px;
+    display: none;
 }
-@media screen and (max-width: 768px){
-    /* .cards{
-        width: 40%;
-    } */
+.tick{
+    width: 50%;
+    height:70%;
+    border:1px solid white;
+    border-left: none;
+    border-top: none;
+    transform: rotate(35deg);
+    position: absolute;
+    top:1px;
+    left:3px;
+    visibility:hidden;
+}
+#card-one:checked ~ .label-1 .head-1{
+    background-color: #fff;
+}
+#card-one:checked ~ .label-1 .title,#card-one:checked ~ .label-1 .content,#card-one:checked ~ .label-1 .icons-1{
+    color: #fff;
+}
+#card-one:checked ~ .label-1{
+    background-color: #bd071e;
+}
+#card-one:checked ~ .label-1 .tick{
+    border:1px solid #bd071e;
+    border-left: none;
+    border-top: none;
+    visibility: visible;
+}
+#card-one:checked ~ .label-1 .top-icon{
+    color: #bd071e;
+}
+#card-one:checked ~ .label-1 .custom-checkbox{
+    border: 2px solid #bd071e;
+}
+/* 2nd card */
+#card-two:checked ~ .label-2 .head-2{
+    background-color: #fff;
+}
+#card-two:checked ~ .label-2 .title,#card-two:checked ~ .label-2 .content,#card-two:checked ~ .label-2 .icons-2{
+    color: #fff;
+}
+#card-two:checked ~ .label-2{
+    background-color: #3b599a;
+}
+#card-two:checked ~ .label-2 .tick{
+    border:1px solid #3b599a;
+    border-left: none;
+    border-top: none;
+    visibility: visible;
+}
+#card-two:checked ~ .label-2 .top-icon{
+    color: #3b599a;
+}
+#card-two:checked ~ .label-2 .custom-checkbox{
+    border: 2px solid #3b599a;
+}
+/* 3rd card */
+#card-three:checked ~ .label-3 .head-3{
+    background-color: #fff;
+}
+#card-three:checked ~ .label-3 .title,#card-three:checked ~ .label-3 .content,#card-three:checked ~ .label-3 .icons-3{
+    color: #fff;
+}
+#card-three:checked ~ .label-3{
+    background-color: #c13584;
+}
+#card-three:checked ~ .label-3 .tick{
+    border:1px solid #c13584;
+    border-left: none;
+    border-top: none;
+    visibility: visible;
+}
+#card-three:checked ~ .label-3 .top-icon{
+    color: #c13584;
+}
+#card-three:checked ~ .label-3 .custom-checkbox{
+    border: 2px solid #c13584;
+}
+/* 4th card */
+#card-four:checked ~ .label-4 .head-4{
+    background-color: #fff;
+}
+#card-four:checked ~ .label-4 .title,#card-four:checked ~ .label-4 .content,#card-four:checked ~ .label-4 .icons-4{
+    color: #fff;
+}
+#card-four:checked ~ .label-4{
+    background-color: #1869ff;
+}
+#card-four:checked ~ .label-4 .tick{
+    border:1px solid #1869ff;
+    border-left: none;
+    border-top: none;
+    visibility: visible;
+}
+#card-four:checked ~ .label-4 .top-icon{
+    color: #1869ff;
+}
+#card-four:checked ~ .label-4 .custom-checkbox{
+    border: 2px solid #1869ff;
+}
+/* 5th card */
+#card-five:checked ~ .label-5 .head-5{
+    background-color: #fff;
+}
+#card-five:checked ~ .label-5 .title,#card-five:checked ~ .label-5 .content,#card-five:checked ~ .label-5 .icons-5{
+    color: #fff;
+}
+#card-five:checked ~ .label-5{
+    background-color: #ea4c88;
+}
+#card-five:checked ~ .label-5 .tick{
+    border:1px solid #ea4c88;
+    border-left: none;
+    border-top: none;
+    visibility: visible;
+}
+#card-five:checked ~ .label-5 .top-icon{
+    color: #ea4c88;
+}
+#card-five:checked ~ .label-5 .custom-checkbox{
+    border: 2px solid #ea4c88;
+}
+/* 6th card */
+#card-six:checked ~ .label-6 .head-6{
+    background-color: #fff;
+}
+#card-six:checked ~ .label-6 .title,#card-six:checked ~ .label-6 .content,#card-six:checked ~ .label-6 .icons-6{
+    color: #fff;
+}
+#card-six:checked ~ .label-6{
+    background-color: #1ca1f1;
+}
+#card-six:checked ~ .label-6 .tick{
+    border:1px solid #1ca1f1;
+    border-left: none;
+    border-top: none;
+    visibility: visible;
+}
+#card-six:checked ~ .label-6 .top-icon{
+    color: #1ca1f1;
+}
+#card-six:checked ~ .label-6 .custom-checkbox{
+    border: 2px solid #1ca1f1;
+}
+/* 7th card */
+#card-seven:checked ~ .label-7 .head-7{
+    background-color: #fff;
+}
+#card-seven:checked ~ .label-7 .title,#card-seven:checked ~ .label-7 .content,#card-seven:checked ~ .label-7 .icons-7{
+    color: #fff;
+}
+#card-seven:checked ~ .label-7{
+    background-color: #f57f01;
+}
+#card-seven:checked ~ .label-7 .tick{
+    border:1px solid #f57f01;
+    border-left: none;
+    border-top: none;
+    visibility: visible;
+}
+#card-seven:checked ~ .label-7 .top-icon{
+    color: #f57f01;
+}
+#card-seven:checked ~ .label-7 .custom-checkbox{
+    border: 2px solid #f57f01;
+}
+/* 8th card */
+#card-eight:checked ~ .label-8 .head-8{
+    background-color: #fff;
+}
+#card-eight:checked ~ .label-8 .title,#card-eight:checked ~ .label-8 .content,#card-eight:checked ~ .label-8 .icons-8{
+    color: #fff;
+}
+#card-eight:checked ~ .label-8{
+    background-color: #0177b6;
+}
+#card-eight:checked ~ .label-8 .tick{
+    border:1px solid #0177b6;
+    border-left: none;
+    border-top: none;
+    visibility: visible;
+}
+#card-eight:checked ~ .label-8 .top-icon{
+    color: #0177b6;
+}
+#card-eight:checked ~ .label-8 .custom-checkbox{
+    border: 2px solid #0177b6;
 }
