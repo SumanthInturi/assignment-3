@@ -19,7 +19,6 @@ body{
     font-family: nunito;
     src: url(nunito-sans.light.ttf);
 }
-
 .main{
     display: flex;
     justify-content: center;
