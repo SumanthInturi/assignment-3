@@ -13,11 +13,11 @@ body{
 }
 @font-face {
     font-family: newfont;
-    src: url(/playball.regular.ttf);
+    src: url(playball.regular.ttf);
 }
 @font-face {
     font-family: nunito;
-    src: url(/nunito-sans.light.ttf);
+    src: url(nunito-sans.light.ttf);
 }
 
 .main{
